@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Heebo:wght@700&family=Varela+Round&display=swap');
+        /* font-family: 'Heebo', sans-serif; 
+           font-family: 'Dosis', sans-serif; 
+           font-family: 'Varela Round', sans-serif; */
+
+        body {
+            background-color: #272727;
+            font-family: 'Dosis', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .desc {
+            font-family: 'Heebo', sans-serif;
+            display: block;
+        }
+
+        .deskripsi {
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .card-book {
+            background-color: #707070;
+            box-shadow: 0 3px 3px 0 rgba(225, 225, 225, .5);
+            position: relative;
+            top: 75px;
+            margin: auto;
+            padding: 5px;
+            /* width: 750px; */
+            width: 310px;
+            height: 310px;
+            border-radius: 50%;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            transition: .3s .1s ease-out;
+            cursor: pointer;
+        }
+
+        .img-cover-book img {
+            width: 200px;
+            border-radius: 2px;
+        }
+
+        .img-cover-book {
+            position: absolute;
+            top: 1px;
+            transition: .2s .1s ease-out;
+        }
+
+        .text-group h1,
+        .text-group p {
+            color: white;
+            position: relative;
+            padding-left: 15px;
+            left: 5px;
+            top: -30px;
+            transform: translate(0, -300px);
+            opacity: 0;
+            overflow: hidden;
+            transition: .2s .2s ease-out;
+        }
+
+        .active {
+            width: 650px;
+            height: 300px;
+            border-radius: 5px;
+        }
+
+        .active .text-group h1,
+        .active .text-group p {
+            opacity: 1;
+            padding-left: 10px;
+            transform: translate(0, 20px);
+        }
+
+        .active .img-cover-book {
+            /* left: -201px; */
+            transform: translate(-420px, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-book">
+        <div class="img-cover-book">
+            <img src="/img/the_mysterious_affair_at_styles_cov.jpg" alt="img-cover-buku">
+        </div>
+        <div class="text-group">
+            <h1 class="judul">The Mysterious Affair At Styles</h1>
+            <p class="dskripsi"><span class="desc">Deskripsi Buku</span>
+                Siapa yang meracuni Emily Inglethorpe yang kaya, dan bagaimana si pembunuh masuk serta melarikan diri
+                dari kamarnya yang terkunci? Kasus ini diperumit banyaknya orang yang punya motif untuk membunuh
+                korban—mulai dari suami baru korban hingga ke dua anak tirinya, pelayannya yang temperamental, serta
+                gadis cantik yang bekerja di apotek rumah sakit. Novel ini menjadi debut yang brilian bagi Detektif
+                Belgia Hercule Poirot dan jadi titik awal Agatha Christie sebagai Ratu Misteri. </p>
+        </div>
+    </div>
+
+    <script>
+        let card = document.querySelector(".card-book");
+
+        card.addEventListener("click", () => {
+            card.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
